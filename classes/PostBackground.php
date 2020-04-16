@@ -16,7 +16,7 @@ class PostBackground {
 						$object = $params['object'];
 				}
 				$postbg = input('postbackground_type');
-				if($object && $postbg && !isset($_FILES['ossn_photo'])) {
+				if($object && $postbg && (!isset($_FILES['ossn_photo']) || (isset($_FILES['ossn_photo']) && empty($_FILES['ossn_photo']['name'])) )) {
 						if(!empty($postbg) && strlen($postbg) <= 125) {
 								$this->saveSettings($object, $postbg);
 						}
