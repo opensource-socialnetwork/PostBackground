@@ -5,7 +5,7 @@ if(isset($params['post']->postbackground_type) && !empty($params['post']->postba
 ?>
 <script>
 	$(document).ready(function(){
-			$element = $('.ossn-wall-item-<?php echo $params['post']->guid;?>');						   
+			$element = $('#activity-item-<?php echo $params['post']->guid;?>');						   
 			if($element.length){
 					if($element.find('p:first').length){
 						$element.find('p:first').addClass('postbg-container');
