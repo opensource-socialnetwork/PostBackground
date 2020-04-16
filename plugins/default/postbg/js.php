@@ -52,7 +52,7 @@ $(document).ready(function(){
 		$(document).ajaxComplete(function(event, xhr, settings) {
 			var $url = settings.url;
 			$pagehandler = $url.replace(Ossn.site_url, '');
-			if($pagehandler.indexOf('action/wall/post/a') >= 0 || $pagehandler.indexOf('action/wall/post/g') >= 0 || $pagehandler.indexOf('action/wall/post/u') >= 0||  || $pagehandler.indexOf('action/wall/post/bpage') >= 0){
+			if($pagehandler.indexOf('action/wall/post/a') >= 0 || $pagehandler.indexOf('action/wall/post/g') >= 0 || $pagehandler.indexOf('action/wall/post/u') >= 0 || $pagehandler.indexOf('action/wall/post/bpage') >= 0){
 					$('.ossn-wall-container-data .postbg-container').attr('style', '');
      				$('.ossn-wall-container-data textarea').removeClass('postbg-container');
 					if($('.postbg-input').length){
