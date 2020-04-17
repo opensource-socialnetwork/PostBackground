@@ -19,6 +19,13 @@ $(document).ready(function(){
 					$('#ossn-wall-postbg').attr('data-toggle', 1);
 					$('#ossn-wall-postbg').show();
 				} else {
+					
+					$('.ossn-wall-container-data .postbg-container').attr('style', '');
+     					$('.ossn-wall-container-data textarea').removeClass('postbg-container');
+					if($('.postbg-input').length){
+						$('.postbg-input').val('');
+					}
+					
 					$('#ossn-wall-postbg').attr('data-toggle', 0);
 					$('#ossn-wall-postbg').hide();
 				}
