@@ -59,6 +59,7 @@ $(document).ready(function(){
 		$(document).ajaxComplete(function(event, xhr, settings) {
 			var $url = settings.url;
 			$pagehandler = $url.replace(Ossn.site_url, '');
+			
 			if($pagehandler.indexOf('action/wall/post/a') >= 0 || $pagehandler.indexOf('action/wall/post/g') >= 0 || $pagehandler.indexOf('action/wall/post/u') >= 0 || $pagehandler.indexOf('action/wall/post/bpage') >= 0){
 					$('.ossn-wall-container-data .postbg-container').attr('style', '');
      				$('.ossn-wall-container-data textarea').removeClass('postbg-container');
@@ -73,5 +74,24 @@ $(document).ready(function(){
 						}
 					});					
 			}
-	});		
+			if($pagehandler.indexOf('wall/post/embed') >= 0){
+					$data = settings.data;
+					$listsdata = $data.split('&');
+					if($listsdata.length > 0){
+						$.each($listsdata, function($key, $value){
+							if($value.indexOf('guid=') >=0){
+									$guid = $value.replace('guid=', '');
+									$element = $('#activity-item-'+$guid);
+									if($element.length && $element.find('.postbg-container')){
+											$text = $element.find('.postbg-container').text();
+											if($text && $text.length > 125){
+												$element.find('.postbg-container').removeClass('postbg-container').attr('style', '');
+												$element.find('.postbg-text').removeClass('postbg-text');
+											}
+									}
+							}
+						});
+					}
+			}
+		});		
 });
