@@ -40,4 +40,14 @@ class PostBackground {
 				$object->data->postbackground_type = $postbg;
 				$object->save();
 		}
+		public static function getById($id){
+				if(__PostBackground_List__){
+					foreach(__PostBackground_List__ as $item){
+							if($item['name'] == $id){
+								return $item;	
+							}
+					}
+				}
+				return false;
+		}
 }

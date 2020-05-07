@@ -50,6 +50,7 @@ $(document).ready(function(){
 											'background': 'url("'+$listsbg[i]['url']+'")',
 											'background-position': 'center',
 											'background-size': 'cover',
+											'color': $listsbg[i]['color_hex'],
 								});
 								$('.postbg-input').val($type);
 								break;	
